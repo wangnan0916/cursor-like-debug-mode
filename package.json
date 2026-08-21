@@ -1,0 +1,65 @@
+{
+  "name": "runtime-debug-toolkit",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Instrumented runtime tracing and evidence-based debugging skills for Codex, Pi, and compatible AI coding agents.",
+  "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "ai-coding-agent",
+    "codex-plugin",
+    "pi-package",
+    "pi-coding-agent",
+    "runtime-debugging",
+    "instrumented-debugging",
+    "structured-logging",
+    "root-cause-analysis",
+    "ndjson",
+    "tracing",
+    "debugging"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "wangnan0916",
+    "url": "https://github.com/wangnan0916"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangnan0916/runtime-debug-toolkit.git"
+  },
+  "homepage": "https://github.com/wangnan0916/runtime-debug-toolkit#readme",
+  "bugs": {
+    "url": "https://github.com/wangnan0916/runtime-debug-toolkit/issues"
+  },
+  "files": [
+    "extensions",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "check": "node --check extensions/skill-prompt.mjs && node --check extensions/checkpoint.mjs && node --check extensions/debug-mode.ts && node --check extensions/trace-mode.ts && node --check skills/trace-mode/scripts/log-server.mjs && node --check skills/trace-mode/scripts/collector-server.mjs && node --check skills/trace-mode/scripts/start-collector.mjs && node --check skills/trace-mode/assets/browser-log-helper.js && node --check skills/trace-mode/assets/node-log-helper.js && node --check tests/log-server.test.mjs",
+    "test": "node tests/log-server.test.mjs",
+    "prepublishOnly": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/debug-mode.ts",
+      "./extensions/trace-mode.ts"
+    ]
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.84.2",
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2"
+  }
+}

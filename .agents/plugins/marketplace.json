@@ -1,0 +1,20 @@
+{
+  "name": "runtime-debug-toolkit",
+  "interface": {
+    "displayName": "Runtime Debug Toolkit for AI Agents"
+  },
+  "plugins": [
+    {
+      "name": "runtime-debug-toolkit",
+      "source": {
+        "source": "local",
+        "path": "."
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
